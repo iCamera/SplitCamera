@@ -13,7 +13,7 @@
 @interface SplitModelSelectViewController ()<SplitSelectViewDelegate>
 @property TakePhotoViewController *takePhotoViewController;
 @property SplitModel *splitModel;
-@property SplitSelectView *splitSelectView;
+//@property SplitSelectView *splitSelectView;
 
 @end
 
@@ -32,9 +32,9 @@
 {
     [super viewDidLoad];
     
-    _splitSelectView =[[SplitSelectView alloc]initWithFrame:CGRectMake(0, 100, 300, 400)];
-    [_splitSelectView setDelegate:self];
-    [self.view addSubview:_splitSelectView];
+    SplitSelectView *splitSelectView =[[SplitSelectView alloc]initWithFrame:CGRectMake(0, 100, 300, 400)];
+    [splitSelectView setDelegate:self];
+    [self.view addSubview:splitSelectView];
 	// Do any additional setup after loading the view.
 }
 
@@ -46,7 +46,7 @@
 }
 
 
-
+//action select split model
 -(void)splitModelSelected:(SplitModel *)model{
     
     [self setModelOfSpit];

@@ -35,21 +35,22 @@
     
     _imagePickerController = [[UIImagePickerController alloc]init];
     _imagePickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
-    _imagePickerController.showsCameraControls = NO;
+    //_imagePickerController.showsCameraControls = NO;
        _imagePickerController.delegate = self;
+    
     _overlayView =[[OverlayView alloc]initWithFrame:_imagePickerController.view.frame];
  
     _imagePickerController.cameraOverlayView = self.overlayView;
   
     
     
-	// Do any additional setup after loading the view.
+	
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -66,7 +67,10 @@
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
     if(!_takedImages) _takedImages = [[NSMutableArray alloc]init];
     [self.takedImages addObject:[info valueForKey:UIImagePickerControllerOriginalImage]];
+    [self.imagePickerController dismissViewControllerAnimated:YES completion:NULL];
+    self.photoEditViewController = [[PhotoEditViewController alloc]initWithImage:[self.takedImages objectAtIndex:0]];
     
+    [self presentViewController:self.photoEditViewController animated:YES completion:NULL];
 }
 
 -(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
