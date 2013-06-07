@@ -10,7 +10,7 @@
 #import "SplitModel.h"
 @interface TakePhotoViewController : UIViewController<UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 
-@property (nonatomic,assign)  SplitModel  *splitModel;
+@property (nonatomic,weak)  SplitModel  *splitModel;
 @property UIImagePickerController *imagePickerController;
 
 

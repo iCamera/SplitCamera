@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-@protocol OverlayViewDelegate;
+//@protocol OverlayViewDelegate;
 @interface OverlayView : UIView
 
 @end

@@ -11,8 +11,8 @@
 #import "SplitModel.h"
 #import "SplitSelectView.h"
 @interface SplitModelSelectViewController ()<SplitSelectViewDelegate>
-@property TakePhotoViewController *takePhotoViewController;
-@property SplitModel *splitModel;
+@property (nonatomic, strong) TakePhotoViewController *takePhotoViewController;
+@property (nonatomic, strong) SplitModel *splitModel;
 //@property SplitSelectView *splitSelectView;
 
 @end

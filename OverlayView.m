@@ -7,7 +7,9 @@
 //
 
 #import "OverlayView.h"
-
+@interface OverlayView
+@property (nonatomic,strong)
+@end
 @implementation OverlayView
 
 - (id)initWithFrame:(CGRect)frame
